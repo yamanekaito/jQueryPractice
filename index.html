@@ -6,20 +6,67 @@
 </head>
 <body>
   <p>JQuery練習</p>
-  <ul id ='main'>
+  <ul id ='main1'>
     <li>0</li>
-    <li class ='item'>1</li>
-    <li class ='item'>2</li>
+    <li class ='item1'>1</li>
+    <li class ='item1'>2</li>
     <li>
       3
-      <ul id ='sub'>
+      <ul id ='sub1'>
         <li>3-0</li>
         <li>3-1</li>
-        <li class='item'>3-2</li>
+        <li class='item1'>3-2</li>
         <li>3-3</li>
       </ul>
     </li>
+  </ul>
 
+  <p>JQuery練習</p>
+  <ul id ='main2'>
+    <li>0</li>
+    <li class ='item2'>1</li>
+    <li class ='item2'>2</li>
+    <li>
+      3
+      <ul id ='sub2'>
+        <li>3-0</li>
+        <li>3-1</li>
+        <li class='item2'>3-2</li>
+        <li>3-3</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>JQuery練習</p>
+  <ul id ='main3'>
+    <li>0</li>
+    <li class ='item3'>1</li>
+    <li class ='item3'>2</li>
+    <li>
+      3
+      <ul id ='sub3'>
+        <li>3-0</li>
+        <li>3-1</li>
+        <li class='item3'>3-2</li>
+        <li>3-3</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>JQuery練習</p>
+  <ul id ='main4'>
+    <li>0</li>
+    <li class ='item4'>1</li>
+    <li class ='item4'>2</li>
+    <li>
+      3
+      <ul id ='sub4'>
+        <li>3-0</li>
+        <li>3-1</li>
+        <li class='item4'>3-2</li>
+        <li>3-3</li>
+      </ul>
+    </li>
   </ul>
 
   <script src ='https://code.jquery.com/jquery-3.5.1.min.js'></script>
@@ -32,10 +79,43 @@
         //class要素　.item
       //メソッド　処理
       // $('p').css('color','red');
-      $('p').css('color','red').hide('slow'); 
-      //メソッドチェーン　　つなげて書くことも可能　ゆっくり消すという処理の追加
-      $('#sub').css('color','red');
-      $('.item').css('background-color','pink');
+    
+      //セレクタ・メソッド
+      //#
+      // >　直下の子要素
+      //   (空白)　それ以下の要素
+      // . 複数の要素
+      // + 隣接する要素
+      // $('p').css('color','red').hide('slow'); 
+            //メソッドチェーン　　つなげて書くことも可能　ゆっくり消すという処理の追加
+      $('#sub1').css('color','red');
+      $('.item1').css('background-color','pink');
+
+          
+      //セレクタ・メソッド
+      //#
+      // >　直下の子要素
+      //   (空白)　それ以下の要素
+      // . 複数の要素
+      // + 隣接する要素
+      $('#main2 > .item2').css('color','blue');
+      $('#main2 .item2').css('background-color','grey');
+      $('p,.item2').css('font-size','30px');
+
+      $('.item3 + .item3').css('color','green');
+      //.item3の隣の.item3を選択　　隣接セレクタ―
+
+      //フィルタ   :
+      //:eq(3)   3番目の要素を取得　　
+      //:gt(3)   3番目よりあとの要素を表示（4番目以降）    greater than 3 
+      //:lt()    3番目より前の要素を表示（2番以前）　　less than 3
+      //:even  偶数版
+      //:add　奇数版
+      //:contains('a')  aという文字を含んでいる要素
+      //:first　　一番最初の要素を選択
+      //:last　　一番最後の要素を選択
+      $('#sub4 > li:eq(2)').css('color','red');
+      //eq = equal　#sub4直下のliの0から数えて2番目を選択
 
     });
   </script>
