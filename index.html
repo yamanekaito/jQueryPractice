@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang ='ja'>
+<head>
+  <meta charset ='utf-8'>
+  <title>jQueryPractice</title>
+</head>
+<body>
+  <p>JQuery練習</p>
+  <ul id ='main'>
+    <li>0</li>
+    <li class ='item'>1</li>
+    <li class ='item'>2</li>
+    <li>
+      3
+      <ul id ='sub'>
+        <li>3-0</li>
+        <li>3-1</li>
+        <li class='item'>3-2</li>
+        <li>3-3</li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <script src ='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+  <script>
+    // $(document).ready(function() {
+    $(function() {
+      //セレクタ　処理対象となるDOM要素を指定
+        //html要素　p,h1,ul
+        //id要素　#main
+        //class要素　.item
+      //メソッド　処理
+      // $('p').css('color','red');
+      $('p').css('color','red').hide('slow'); 
+      //メソッドチェーン　　つなげて書くことも可能　ゆっくり消すという処理の追加
+      $('#sub').css('color','red');
+      $('.item').css('background-color','pink');
+
+    });
+  </script>
+</body>
+</html>
